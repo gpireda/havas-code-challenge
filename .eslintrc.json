@@ -20,5 +20,8 @@
   "plugins": [
     "@typescript-eslint"
   ],
-  "root": true
+  "root": true,
+  "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  }
 }
