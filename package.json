@@ -29,7 +29,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "CI=true react-scripts test --findRelatedTests",
+    "test:watch": "react-scripts test --watchAll=true",
     "eject": "react-scripts eject"
   },
   "husky": {
