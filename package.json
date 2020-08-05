@@ -29,8 +29,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --findRelatedTests",
-    "test:watch": "react-scripts test --watchAll=true",
+    "test": "CI=true react-scripts test --env=jsdom-fourteen",
+    "test:watch": "react-scripts test --watchAll=true --env=jsdom-fourteen",
     "eject": "react-scripts eject"
   },
   "husky": {
@@ -39,7 +39,7 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts,tsx,js,jsx}": [
+    "src/**/*.{ts,tsx,js,jsx}": [
       "npx eslint --fix",
       "npm test",
       "prettier --write"

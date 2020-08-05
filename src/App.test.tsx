@@ -1,9 +1,11 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import App from './App'
 
 it('renders without crashing', () => {
   render(<App />)
 
-  expect(screen.getByTestId('main-wrapper')).toBeTruthy()
+  waitFor(() => {
+    expect(screen.getByTestId('main-wrapper')).toBeTruthy()
+  })
 })
