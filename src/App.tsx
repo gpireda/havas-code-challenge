@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Layout from 'components/Layout/Layout'
 import usePosts from 'hooks/usePosts'
 import PostsList from 'views/PostsList/PostsList'
@@ -11,9 +12,15 @@ function App() {
   }
 
   return (
-    <Layout>
-      <PostsList posts={posts} />
-    </Layout>
+    <Router>
+      <Layout>
+        <Switch>
+          <Route path={['/', '/posts']}>
+            <PostsList posts={posts} />
+          </Route>
+        </Switch>
+      </Layout>
+    </Router>
   )
 }
 
