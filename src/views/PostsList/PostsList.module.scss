@@ -1,0 +1,12 @@
+@import '../../styles/breakpoints.scss';
+
+section {
+  display: grid;
+  grid-gap: var(--spacing-normal);
+}
+
+@media screen and(min-width: $desktopBreakpoint) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
