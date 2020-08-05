@@ -22,3 +22,12 @@ h6,
 p {
   margin: 0;
 }
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-gray);
+  }
+}

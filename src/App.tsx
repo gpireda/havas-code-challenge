@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Layout from 'components/Layout/Layout'
 import usePosts from 'hooks/usePosts'
 import PostsList from 'views/PostsList/PostsList'
+import PostDetails from 'views/PostDetails/PostDetails'
 
 function App() {
   const { posts } = usePosts()
@@ -15,6 +16,7 @@ function App() {
     <Router>
       <Layout>
         <Switch>
+          <Route path='/posts/:id' render={() => <PostDetails />} />
           <Route path={['/', '/posts']}>
             <PostsList posts={posts} />
           </Route>

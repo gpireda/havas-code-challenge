@@ -1,4 +1,5 @@
 import React from 'react'
+import { MemoryRouter } from 'react-router-dom'
 import { render, screen } from '@testing-library/react'
 import PostsList from './PostsList'
 
@@ -27,7 +28,11 @@ const posts = [
 ]
 
 it('renders the expected amount of posts', () => {
-  render(<PostsList posts={posts} />)
+  render(
+    <MemoryRouter>
+      <PostsList posts={posts} />
+    </MemoryRouter>,
+  )
 
   expect(screen.getByTestId('posts-list-wrapper').childNodes).toHaveLength(posts.length)
 })
