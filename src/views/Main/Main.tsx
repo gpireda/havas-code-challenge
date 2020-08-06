@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import Post from 'components/Post/Post'
+import { useParams } from 'react-router-dom'
 import ListWrapper from 'components/ListWrapper/ListWrapper'
 import PostDetails from 'views/PostDetails/PostDetails'
+import PostsList from 'components/PostsList/PostsList'
 import { presentPosts } from 'helpers'
 
 interface MainProps {
@@ -15,14 +15,16 @@ const Main: FC<MainProps> = ({ posts }) => {
 
   return (
     <>
-      {post && <PostDetails post={post} />}
+      {post && (
+        <>
+          <PostDetails post={post} />
+          <hr />
+          <h1>Ver mais</h1>
+        </>
+      )}
 
       <ListWrapper>
-        {filteredPosts.map(post => (
-          <Link key={post.id} to={`/posts/${post.id}`}>
-            <Post post={post} />
-          </Link>
-        ))}
+        <PostsList posts={filteredPosts} />
       </ListWrapper>
     </>
   )

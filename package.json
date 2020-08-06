@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --env=jsdom-fourteen",
+    "test": "CI=true react-scripts test --env=jsdom-fourteen --passWithNoTests",
     "test:watch": "react-scripts test --watchAll=true --coverage --env=jsdom-fourteen",
     "eject": "react-scripts eject"
   },
