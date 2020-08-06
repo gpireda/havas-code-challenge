@@ -1,5 +1,5 @@
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
+import { MemoryRouter, Route } from 'react-router-dom'
 import { render, screen } from '@testing-library/react'
 import Main from './Main'
 
@@ -35,4 +35,18 @@ it('renders the expected amount of posts', () => {
   )
 
   expect(screen.getByTestId('posts-list-wrapper').childNodes).toHaveLength(posts.length)
+})
+
+it('renders post details section when user has selected one', () => {
+  render(
+    <MemoryRouter initialEntries={['/posts/3']}>
+      <Route path='/posts/:postId'>
+        <Main posts={posts} />
+      </Route>
+    </MemoryRouter>,
+  )
+
+  expect(screen.getByTestId('post-details-wrapper')).toBeInTheDocument()
+  expect(screen.getByRole('separator')).toBeInTheDocument()
+  expect(screen.getByText(/ver mais/i)).toBeInTheDocument()
 })
