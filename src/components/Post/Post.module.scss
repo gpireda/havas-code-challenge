@@ -1,3 +1,12 @@
+@import '../../styles/breakpoints.scss';
+
 article {
   background: var(--color-white);
+  padding: var(--spacing-small);
+}
+
+@media screen and(min-width: $desktopBreakpoint) {
+  article {
+    padding: var(--spacing-normal);
+  }
 }
