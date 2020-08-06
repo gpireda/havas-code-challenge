@@ -1,9 +1,8 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import Layout from 'components/Layout/Layout'
 import usePosts from 'hooks/usePosts'
-import PostsList from 'views/PostsList/PostsList'
-import PostDetails from 'views/PostDetails/PostDetails'
+import Main from 'views/Main/Main'
 
 function App() {
   const { posts } = usePosts()
@@ -13,28 +12,13 @@ function App() {
   }
 
   return (
-    <Router>
-      <Layout>
-        <Switch>
-          <Route
-            path='/posts/:id'
-            render={({ match }) => {
-              const post = posts.find(({ id }) => id === +match.params.id)
+    <Layout>
+      <Route path={['/posts/:postId', '/']}>
+        <Main posts={posts} />
+      </Route>
 
-              if (!post) {
-                return <Redirect to='/' />
-              }
-
-              return <PostDetails post={post} />
-            }}
-          />
-
-          <Route path={['/', '/posts']}>
-            <PostsList posts={posts} />
-          </Route>
-        </Switch>
-      </Layout>
-    </Router>
+      <Route render={() => <Redirect to='/' />} />
+    </Layout>
   )
 }
 

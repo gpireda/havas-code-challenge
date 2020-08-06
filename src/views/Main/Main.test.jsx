@@ -1,7 +1,7 @@
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { render, screen } from '@testing-library/react'
-import PostsList from './PostsList'
+import Main from './Main'
 
 const posts = [
   {
@@ -30,7 +30,7 @@ const posts = [
 it('renders the expected amount of posts', () => {
   render(
     <MemoryRouter>
-      <PostsList posts={posts} />
+      <Main posts={posts} />
     </MemoryRouter>,
   )
 
