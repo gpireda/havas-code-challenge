@@ -5,6 +5,7 @@ import PostDetails from 'views/PostDetails/PostDetails'
 import PostsList from 'components/PostsList/PostsList'
 import { presentPosts } from 'helpers'
 import styles from './Main.module.scss'
+import Heading from 'components/Heading/Heading'
 
 interface MainProps {
   posts: Array<Post>
@@ -20,7 +21,7 @@ const Main: FC<MainProps> = ({ posts }) => {
         <div className={styles['post-details-wrapper']}>
           <PostDetails post={post} />
           <hr />
-          <h1>Ver mais</h1>
+          <Heading>Ver mais</Heading>
         </div>
       )}
 

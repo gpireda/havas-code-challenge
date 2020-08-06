@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import Heading from 'components/Heading/Heading'
+import Paragraph from 'components/Paragraph/Paragraph'
 import './Post.module.scss'
 
 interface PostProps {
@@ -7,8 +9,8 @@ interface PostProps {
 
 const Post: FC<PostProps> = ({ post }) => (
   <article>
-    <h1>{post.title}</h1>
-    <p data-testid='body'>{post.body}</p>
+    <Heading>{post.title}</Heading>
+    <Paragraph dataTestId='body'>{post.body}</Paragraph>
   </article>
 )
 
