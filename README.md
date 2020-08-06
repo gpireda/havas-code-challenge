@@ -28,7 +28,7 @@
 Apesar de a API utilizada ser um placeholder, alguns pontos válidos de observação:
 
 1. Possibilidade de paginação na listagem de posts, através de um scroll infinito ou de um paginador;
-2. A regra de negócio de `Ver mais` poderia e deveria ser embutida na API, talvez em um endpoint separado, permitindo o carregamento dinâmico na interface e variação na quantidade de posts, além de diversificar a possibilidade de não se ter apenas os 4 primeiros da lista;
+2. A regra de negócio de `Ver mais` poderia e deveria ser embutida na API, talvez em um endpoint separado, permitindo o carregamento dinâmico na interface, garantindo escalabilidade para maior número de clientes, variação na quantidade e diversificação de quais seriam os posts apresentados, não ficando restrito a apenas os 4 primeiros da lista;
 3. Serviço de autenticação, permitindo uma seção pública e uma privada, com eventuais restrições de acesso;
 4. Interação com os posts, possivelmente no modelo de threads, permitindo engajamento e comunicação entre usuários;
 5. Inclusão de datas de postagens e status informando se o post já foi visto ou não pelo usuário logado.
