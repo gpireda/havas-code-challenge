@@ -24,6 +24,7 @@
 1. Definição aprimorada de estilizações em geral (cores, tipografia, layout);
 2. Estado de loading inicial e durante transiçõo entre as views;
 3. Code splitting, reduzindo os tamanhos dos chunks de js de acordo com a funcionalidade requisitada pelo usuário em tempo de execução;
+4. Tratamento de erros;
 
 Apesar de a API utilizada ser um placeholder, alguns pontos válidos de observação:
 
