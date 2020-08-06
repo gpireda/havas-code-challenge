@@ -3,6 +3,7 @@
 section {
   display: grid;
   grid-gap: var(--spacing-normal);
+  margin: var(--spacing-normal) 0;
 }
 
 @media screen and(min-width: $desktopBreakpoint) {
