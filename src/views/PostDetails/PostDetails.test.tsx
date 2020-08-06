@@ -28,5 +28,5 @@ it('renders the expected post heading', () => {
 })
 
 it('renders go back link', () => {
-  expect(screen.getByRole('link').textContent).toEqual('Go back')
+  expect(screen.getByRole('link').textContent).toContain('Voltar')
 })

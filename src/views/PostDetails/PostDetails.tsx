@@ -1,5 +1,8 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
+import Post from 'components/Post/Post'
+import { ReactComponent as ChevronLeftIcon } from 'icons/chevron-left.svg'
+import styles from './PostDetails.module.scss'
 
 interface PostDetailsProps {
   post: Post
@@ -8,9 +11,12 @@ interface PostDetailsProps {
 const PostDetails: FC<PostDetailsProps> = ({ post }) => {
   return (
     <>
-      <Link to='/'>Go back</Link>
+      <Link className={styles['go-back-link']} to='/'>
+        <ChevronLeftIcon />
+        Voltar
+      </Link>
 
-      <h1>{post.title}</h1>
+      <Post post={post} />
     </>
   )
 }
